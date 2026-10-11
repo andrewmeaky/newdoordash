@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 830" width="1240" height="830" font-family="Arial, Helvetica, sans-serif" font-size="14">
+  <rect width="1240" height="830" fill="#ffffff"/>
+  <text x="620" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a237e">ERD (Chen notation): Approval Record and its relationships</text>
+
+  <!-- ===== attribute lines (record) ===== -->
+  <g stroke="#333" stroke-width="1.3" fill="none">
+    <line x1="300" y1="154" x2="580" y2="350"/>
+    <line x1="450" y1="154" x2="590" y2="350"/>
+    <line x1="600" y1="154" x2="600" y2="350"/>
+    <line x1="750" y1="154" x2="610" y2="350"/>
+    <line x1="900" y1="154" x2="620" y2="350"/>
+  </g>
+  <!-- attributes -->
+  <g fill="#fffde7" stroke="#333" stroke-width="1.3">
+    <ellipse cx="300" cy="130" rx="62" ry="24"/>
+    <ellipse cx="450" cy="130" rx="62" ry="24"/>
+    <ellipse cx="600" cy="130" rx="62" ry="24"/>
+    <ellipse cx="750" cy="130" rx="62" ry="24"/>
+    <ellipse cx="900" cy="130" rx="62" ry="24"/>
+  </g>
+  <g text-anchor="middle" fill="#111">
+    <text x="300" y="135" text-decoration="underline">approval_id</text>
+    <text x="450" y="135">decision</text>
+    <text x="600" y="135">decision_level</text>
+    <text x="750" y="135">decision_date</text>
+    <text x="900" y="135">comments</text>
+  </g>
+  <text x="300" y="175" text-anchor="middle" font-size="11" fill="#555">(PK)</text>
+  <text x="450" y="175" text-anchor="middle" font-size="11" fill="#555">Approved / Rejected / Returned</text>
+  <text x="600" y="175" text-anchor="middle" font-size="11" fill="#555">Faculty / University</text>
+
+  <!-- ===== relationship lines ===== -->
+  <g stroke="#333" stroke-width="1.6" fill="none">
+    <!-- proposal -->
+    <line x1="210" y1="250" x2="270" y2="250"/>
+    <line x1="410" y1="250" x2="510" y2="365"/>
+    <!-- initiative -->
+    <line x1="210" y1="510" x2="270" y2="510"/>
+    <line x1="410" y1="510" x2="510" y2="395"/>
+    <!-- approver -->
+    <line x1="690" y1="380" x2="770" y2="380"/>
+    <line x1="910" y1="380" x2="990" y2="380"/>
+    <!-- ISA -->
+    <line x1="1075" y1="410" x2="1075" y2="470"/>
+    <line x1="1060" y1="490" x2="1010" y2="560"/>
+    <line x1="1090" y1="490" x2="1150" y2="560"/>
+  </g>
+  <!-- inferred (dashed) -->
+  <g stroke="#c62828" stroke-width="1.6" fill="none" stroke-dasharray="7 5">
+    <line x1="560" y1="410" x2="535" y2="515"/>
+    <line x1="530" y1="585" x2="490" y2="700"/>
+    <line x1="640" y1="410" x2="690" y2="515"/>
+    <line x1="700" y1="585" x2="730" y2="700"/>
+  </g>
+
+  <!-- ===== entities ===== -->
+  <g fill="#bbdefb" stroke="#0d47a1" stroke-width="2">
+    <rect x="510" y="350" width="180" height="60" fill="#ffcc80" stroke="#e65100" stroke-width="3"/>
+    <rect x="40" y="220" width="170" height="60"/>
+    <rect x="40" y="480" width="170" height="60"/>
+    <rect x="990" y="350" width="170" height="60"/>
+    <rect x="960" y="560" width="100" height="50" fill="#c8e6c9" stroke="#1b5e20"/>
+    <rect x="1090" y="560" width="130" height="50" fill="#c8e6c9" stroke="#1b5e20"/>
+    <rect x="420" y="700" width="140" height="50" fill="#eeeeee" stroke="#616161"/>
+    <rect x="660" y="700" width="140" height="50" fill="#eeeeee" stroke="#616161"/>
+  </g>
+  <g text-anchor="middle" font-weight="bold" fill="#111">
+    <text x="600" y="386" font-size="16">ApprovalRecord</text>
+    <text x="125" y="244">Modification</text><text x="125" y="264">Proposal</text>
+    <text x="125" y="504">Innovation</text><text x="125" y="524">Initiative</text>
+    <text x="1075" y="386">AcademicMember</text>
+    <text x="1010" y="590">Dean</text>
+    <text x="1155" y="580">University</text><text x="1155" y="598">Management</text>
+    <text x="490" y="730">AuditLog</text>
+    <text x="730" y="730">Notification</text>
+  </g>
+
+  <!-- ===== relationship diamonds ===== -->
+  <g fill="#e1bee7" stroke="#4a148c" stroke-width="2">
+    <polygon points="340,215 410,250 340,285 270,250"/>
+    <polygon points="340,475 410,510 340,545 270,510"/>
+    <polygon points="840,345 910,380 840,415 770,380"/>
+  </g>
+  <g fill="#ffebee" stroke="#c62828" stroke-width="2" stroke-dasharray="6 4">
+    <polygon points="530,515 600,550 530,585 460,550"/>
+    <polygon points="700,515 770,550 700,585 630,550"/>
+  </g>
+  <g text-anchor="middle" fill="#111" font-size="13">
+    <text x="340" y="255">decides on</text>
+    <text x="340" y="515">decides on</text>
+    <text x="840" y="385">decided by</text>
+    <text x="530" y="555">logged in</text>
+    <text x="700" y="555">triggers</text>
+  </g>
+
+  <!-- ISA triangle -->
+  <polygon points="1075,465 1055,495 1095,495" fill="#fff" stroke="#1b5e20" stroke-width="2"/>
+  <text x="1075" y="490" text-anchor="middle" font-size="10" fill="#1b5e20">ISA</text>
+
+  <!-- ===== cardinalities ===== -->
+  <g font-weight="bold" fill="#b71c1c" font-size="15">
+    <text x="222" y="242">1</text>
+    <text x="478" y="338">N</text>
+    <text x="222" y="502">1</text>
+    <text x="478" y="432">N</text>
+    <text x="700" y="370">N</text>
+    <text x="965" y="370">1</text>
+    <text x="580" y="462">N</text>
+    <text x="500" y="690">1</text>
+    <text x="655" y="462">N</text>
+    <text x="740" y="690">1</text>
+  </g>
+
+  <!-- XOR note -->
+  <g>
+    <path d="M 372 262 C 440 340, 440 420, 372 498" fill="none" stroke="#6a1b9a" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="300" y="372" text-anchor="middle" font-size="12" fill="#6a1b9a" font-style="italic">XOR: a record belongs to</text>
+    <text x="300" y="389" text-anchor="middle" font-size="12" fill="#6a1b9a" font-style="italic">exactly ONE proposal OR initiative</text>
+  </g>
+
+  <!-- Constraint note -->
+  <g font-size="12.5" fill="#222">
+    <rect x="800" y="470" width="150" height="0" fill="none"/>
+    <text x="780" y="450" fill="#1b5e20" font-weight="bold">Constraint on "decided by":</text>
+    <text x="780" y="468" fill="#1b5e20">Faculty-level decision → Dean</text>
+    <text x="780" y="486" fill="#1b5e20">University-level → Univ. Management</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="13" fill="#222">
+    <rect x="40" y="640" width="320" height="150" fill="#fafafa" stroke="#999"/>
+    <text x="55" y="663" font-weight="bold">Legend</text>
+    <line x1="55" y1="680" x2="105" y2="680" stroke="#333" stroke-width="2"/>
+    <text x="115" y="685">Explicit in the project description</text>
+    <line x1="55" y1="703" x2="105" y2="703" stroke="#c62828" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="115" y="708">Inferred (optional in your ERD)</text>
+    <text x="55" y="731">1 / N = cardinality</text>
+    <text x="55" y="751">ISA = Dean and University Management</text>
+    <text x="55" y="769">are subclasses of AcademicMember</text>
+  </g>
+</svg>
